@@ -41,6 +41,8 @@ class AuthController extends Controller
     {
         if (! Auth::attempt($request->only('email', 'password'))) {
             return response()->json([
+                'code' => 401,
+                'status' => false,
                 'message' => 'Unauthorized'
             ], 401);
         }
