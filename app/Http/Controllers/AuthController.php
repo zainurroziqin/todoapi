@@ -64,6 +64,8 @@ class AuthController extends Controller
     {
         Auth::user()->tokens()->delete();
         return response()->json([
+            'code' => 200,
+            'status' => true,
             'message' => 'logout success'
         ]);
     }
